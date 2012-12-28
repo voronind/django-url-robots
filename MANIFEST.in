@@ -1,0 +1,7 @@
+include AUTHORS.txt
+include CHANGELOG
+include LICENSE
+include MANIFEST.in
+include README.rst
+
+graft url_robots
