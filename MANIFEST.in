@@ -5,3 +5,4 @@ include MANIFEST.in
 include README.rst
 
 graft url_robots
+recursive-exclude url_robots *.pyc *.pyo

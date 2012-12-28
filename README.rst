@@ -3,6 +3,7 @@ django-url-robots
 =========================
 
 ``Django`` ``robots.txt`` generator. Based on using decorated ``django.conf.urls.defaults.url``
+It gets ``urlpatterns`` and replace ambiguous parts on ``*``.
 
 Installation & Usage
 =========================
@@ -35,7 +36,7 @@ The recommended way to install django-url-robots is with `pip <http://pypi.pytho
        url('^profile/private$', 'view', robots_disallow=True),
        )
  
-``django-url-robots`` tested with ``Django-1.3``
+``django-url-robots`` tested with ``Django-1.3``. Encodes unicode characters by percent-encoding.
 
 Settings
 ====================
