@@ -27,9 +27,7 @@ The recommended way to install django-url-robots is with `pip <http://pypi.pytho
         url(r'^robots.txt$', 'url_robots.views.robots_txt'),
         )
 
-4. Describe rules by boolean keyword arguments 
-``robots_allow`` and ``robots_disallow`` 
-using for it ``url_robots.utils.url`` instead ``django.conf.urls.defaults.url``::
+4. Describe rules by boolean keyword arguments ``robots_allow`` and ``robots_disallow`` using for it ``url_robots.utils.url`` instead ``django.conf.urls.defaults.url``::
 
     from url_robots.utils import url
     
@@ -42,7 +40,7 @@ using for it ``url_robots.utils.url`` instead ``django.conf.urls.defaults.url``:
 Settings
 ====================
 
-In this moment there are only one option to define template of ``robots.txt`` file.::
+In this moment there are only one option to define template of ``robots.txt`` file::
 
     urlpatterns += patterns('',
         url(r'^robots.txt$', 'url_robots.views.robots_txt', {'template': 'my_awesome_robots_template.txt'}),
@@ -55,6 +53,7 @@ robots_template.txt::
     User-agent: *
     Disallow: /*  # disallow all
     {{ rules|safe }}
+
 urls.py::
 
     from django.conf.urls.defaults import patterns, include
@@ -62,6 +61,7 @@ urls.py::
     urlpatterns = patterns('',
         url(r'^profile', include('url_robots.tests.urls_profile')),
     )
+
 urls_profile.py::
 
     from django.conf.urls.defaults import patterns
@@ -73,6 +73,7 @@ urls_profile.py::
         url(r'^/(?P<nick>\w+)/private', 'view', name='profile_private', robots_disallow=True),
         url(r'^/(?P<nick>\w+)/public', 'view', name='profile_public', robots_allow=True),
         )
+
 Resulting robots.txt::
 
     User-agent: *
@@ -80,3 +81,4 @@ Resulting robots.txt::
     Allow: /profiles$
     Disallow: /profile/*/private*
     Allow: /profile/*/public*
+

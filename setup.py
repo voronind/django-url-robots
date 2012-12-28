@@ -4,7 +4,7 @@ long_description = open('README.rst').read()
 
 setup(
     name='django-url-robots',
-    version='1.0',
+    version='1.0.2',
     package_dir={'url_robots': 'url_robots'},
 #    packages=['markitup_field', 'markitup_field.tests'],
 #    packages=['markitup_field'],
