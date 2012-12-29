@@ -2,8 +2,8 @@
 django-url-robots
 =========================
 
-``Django`` ``robots.txt`` generator. Based on using decorated ``django.conf.urls.defaults.url``
-It gets ``urlpatterns`` and replace ambiguous parts on ``*``.
+``Django`` ``robots.txt`` generator. Based on using decorated ``django.conf.urls.defaults.url``.
+It gets ``urlpatterns`` and replaces ambiguous parts by ``*``.
 
 Installation & Usage
 =========================
