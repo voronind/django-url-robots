@@ -25,7 +25,7 @@ The recommended way to install django-url-robots is with `pip <http://pypi.pytho
 3. Add url_robots view to your root URLconf::
 
     urlpatterns += patterns('',
-        url(r'^robots.txt$', 'url_robots.views.robots_txt'),
+        url(r'^robots\.txt$', 'url_robots.views.robots_txt'),
         )
 
 4. Describe rules by boolean keyword arguments ``robots_allow`` and ``robots_disallow`` using for it ``url_robots.utils.url`` instead ``django.conf.urls.defaults.url``::
@@ -44,7 +44,7 @@ Settings
 In this moment there are only one option to define template of ``robots.txt`` file::
 
     urlpatterns += patterns('',
-        url(r'^robots.txt$', 'url_robots.views.robots_txt', {'template': 'my_awesome_robots_template.txt'}),
+        url(r'^robots\.txt$', 'url_robots.views.robots_txt', {'template': 'my_awesome_robots_template.txt'}),
         )
 
 Example
