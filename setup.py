@@ -4,7 +4,7 @@ long_description = open('README.rst').read()
 
 setup(
     name='django-url-robots',
-    version='1.0.4',
+    version='1.1',
     description='Django robots.txt generator',
     long_description=long_description,
     url='http://github.com/dimka665/django-url-robots',

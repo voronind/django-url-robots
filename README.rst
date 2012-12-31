@@ -28,12 +28,12 @@ The recommended way to install django-url-robots is with `pip <http://pypi.pytho
         url(r'^robots.txt$', 'url_robots.views.robots_txt'),
         )
 
-4. Describe rules by boolean keyword arguments ``robots_allow`` and ``robots_disallow`` using for it ``url_robots.utils.url`` instead ``django.conf.urls.defaults.url``::
+4. Describe rules by boolean keyword argument ``robots_allow`` using for it ``url_robots.utils.url`` instead ``django.conf.urls.defaults.url``::
 
     from url_robots.utils import url
     
     urlpatterns += patterns('',
-       url('^profile/private$', 'view', robots_disallow=True),
+       url('^profile/private$', 'view', robots_allow=False),
        )
  
 ``django-url-robots`` tested with ``Django-1.3``. Encodes unicode characters by percent-encoding.
@@ -71,7 +71,7 @@ urls_profile.py::
     urlpatterns = patterns('',
         url(r'^s$', 'view', name='profiles', robots_allow=True),
         url(r'^/(?P<nick>\w+)$', 'view'),
-        url(r'^/(?P<nick>\w+)/private', 'view', name='profile_private', robots_disallow=True),
+        url(r'^/(?P<nick>\w+)/private', 'view', name='profile_private', robots_allow=False),
         url(r'^/(?P<nick>\w+)/public', 'view', name='profile_public', robots_allow=True),
         )
 

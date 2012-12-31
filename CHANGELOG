@@ -1,4 +1,8 @@
 
+1.1   - December 2012
+=====================
+    - remove 'robots_disallow' argument
+
 1.0   - December 2012
 =====================
     - initial working release

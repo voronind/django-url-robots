@@ -10,11 +10,10 @@ from django.core.urlresolvers import get_urlconf, get_resolver, RegexURLResolver
 # decorator for django.conf.urls.defaults.url
 def robots_decorator(url_function):
     def url_extended(regex, view, kwargs=None, name=None, prefix='',
-                     robots_allow=None, robots_disallow=None):
+                     robots_allow=None):
         resolver_or_pattern = url_function(regex, view, kwargs=kwargs, name=name, prefix=prefix)
 
         resolver_or_pattern.robots_allow = robots_allow
-        resolver_or_pattern.robots_disallow = robots_disallow
         return resolver_or_pattern
 
     return url_extended
@@ -37,14 +36,15 @@ def create_rule_list(parent_resolver, abs_pattern):
     for resolver in parent_resolver.url_patterns:
         pattern = join_patterns(abs_pattern, resolver.regex.pattern)
 
-        robots_allow = getattr(resolver, 'robots_allow', None)
-        robots_disallow = getattr(resolver, 'robots_disallow', None)
         rule = ''
+        robots_allow = getattr(resolver, 'robots_allow', None)
 
-        if robots_disallow:
-            rule = 'Disallow: '
+        if robots_allow is None:
+            pass
         elif robots_allow:
             rule = 'Allow: '
+        else:
+            rule = 'Disallow: '
 
         if rule:
             path = clean_pattern(pattern)
