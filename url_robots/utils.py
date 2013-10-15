@@ -4,10 +4,10 @@ from sre_constants import LITERAL, AT, AT_BEGINNING, AT_END
 
 from urllib import quote, unquote
 
-from django.conf.urls.defaults import url
+from django.conf.urls import url
 from django.core.urlresolvers import get_urlconf, get_resolver, RegexURLResolver
 
-# decorator for django.conf.urls.defaults.url
+# decorator for django.conf.urls.url
 def robots_decorator(url_function):
     def url_extended(regex, view, kwargs=None, name=None, prefix='',
                      robots_allow=None):

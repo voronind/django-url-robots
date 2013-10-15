@@ -2,7 +2,7 @@
 django-url-robots
 =========================
 
-``Django`` ``robots.txt`` generator. Based on using decorated ``django.conf.urls.defaults.url``.
+``Django`` ``robots.txt`` generator. Based on using decorated ``django.conf.urls.url``.
 It gets ``urlpatterns`` and replaces ambiguous parts by ``*``.
 
 Installation & Usage
@@ -28,7 +28,7 @@ The recommended way to install django-url-robots is with `pip <http://pypi.pytho
         url(r'^robots\.txt$', 'url_robots.views.robots_txt'),
         )
 
-4. Describe rules by boolean keyword argument ``robots_allow`` using for it ``url_robots.utils.url`` instead ``django.conf.urls.defaults.url``::
+4. Describe rules by boolean keyword argument ``robots_allow`` using for it ``url_robots.utils.url`` instead ``django.conf.urls.url``::
 
     from url_robots.utils import url
     
@@ -57,7 +57,7 @@ robots_template.txt::
 
 urls.py::
 
-    from django.conf.urls.defaults import patterns, include
+    from django.conf.urls import patterns, include
 
     urlpatterns = patterns('',
         url(r'^profile', include('url_robots.tests.urls_profile')),
@@ -65,7 +65,7 @@ urls.py::
 
 urls_profile.py::
 
-    from django.conf.urls.defaults import patterns
+    from django.conf.urls import patterns
     from url_robots.utils import url
 
     urlpatterns = patterns('',
