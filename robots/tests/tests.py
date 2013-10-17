@@ -3,7 +3,7 @@
 # todo On Django 1.4 change testcase to django.test.SimpleTestCase
 from django.utils import unittest
 
-from url_robots.utils import clean_pattern, join_patterns, create_rules
+from robots.utils import clean_pattern, join_patterns, create_rules
 
 
 class CleanPatternTestCase(unittest.TestCase):
@@ -137,11 +137,11 @@ class JoinPatternTestCase(unittest.TestCase):
 
 class CreateRulesTestCase(unittest.TestCase):
     def setUp(self):
-        self.expected_rules = '''Allow: /profiles$                                                                                                        # /profiles$                             name=profiles
-Disallow: /profile/*/private*                                                                                            # /profile/*/private*                    name=profile_private
-Allow: /profile/*/public*                                                                                                # /profile/*/public*                     name=profile_public'''
+        self.expected_rules = '''Allow: /profiles$
+Disallow: /profile/*/private*
+Allow: /profile/*/public*'''
 
     def test_create_rules_for_profiles(self):
-        rules = create_rules('url_robots.tests.urls')
+        rules = create_rules('robots.tests.urls')
         self.assertEqual(rules, self.expected_rules)
 

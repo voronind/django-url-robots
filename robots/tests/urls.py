@@ -2,9 +2,9 @@
 
 from django.conf.urls import patterns, include
 
-from url_robots.utils import url
+from robots.utils import url
 
 
 urlpatterns = patterns('',
-    url(r'^profile', include('url_robots.tests.urls_profile')),
+    url(r'^profile', include('robots.tests.urls_profile')),
 )

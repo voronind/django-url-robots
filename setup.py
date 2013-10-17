@@ -1,19 +1,21 @@
+# -*- coding: utf-8 -*- 
+
 from distutils.core import setup
 
 long_description = open('README.rst').read()
 
 setup(
-    name='django-url-robots',
-    version='1.3alt',
+    name='django-robots',
+    version='1.4alt',
     description='Django robots.txt generator',
     long_description=long_description,
-    url='http://github.com/dimka665/django-url-robots',
-    author='Dmitry Voronin',
-    author_email='dimka665@gmail.com',
+    url='https://github.com/valeriansaliou/django-robots',
+    author='Valérian Saliou',
+    author_email='valerian@valeriansaliou.name',
     license='Python Software Foundation License',
-    packages=['url_robots', 'url_robots.tests'],
-    package_data={'url_robots': ['templates/*.*']},
-    platforms=["any"],
+    packages=['robots', 'robots.tests'],
+    package_data={'robots': ['templates/*.*']},
+    platforms=['any'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -23,5 +25,5 @@ setup(
         'Programming Language :: Python',
         'Environment :: Web Environment',
         'Framework :: Django',
-        ],
+    ],
 )

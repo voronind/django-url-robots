@@ -2,7 +2,7 @@
 
 from django.conf.urls import patterns
 
-from url_robots.utils import url
+from robots.utils import url
 
 urlpatterns = patterns('',
     url(r'^s$', 'view', name='profiles', robots_allow=True),
