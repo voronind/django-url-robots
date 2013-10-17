@@ -59,9 +59,6 @@ def create_rule_list(parent_resolver, abs_pattern):
         if rule:
             path = clean_pattern(pattern)
             rule += path
-            length = 120
-            rule = rule.ljust(length)
-
             rule_list.append(rule)
 
         if isinstance(resolver, RegexURLResolver):
