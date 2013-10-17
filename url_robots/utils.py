@@ -7,8 +7,11 @@ from urllib import quote, unquote
 from django.conf.urls import url
 from django.core.urlresolvers import get_urlconf, get_resolver, RegexURLResolver
 
-# decorator for django.conf.urls.url
+
 def robots_decorator(url_function):
+    """
+    Decorator for django.conf.urls.url
+    """
     def url_extended(regex, view, kwargs=None, name=None, prefix='',
                      robots_allow=None):
         resolver_or_pattern = url_function(regex, view, kwargs=kwargs, name=name, prefix=prefix)
@@ -22,15 +25,22 @@ url = robots_decorator(url)
 
 
 def create_rules(urlconf=None):
+    """
+    Creates rules from conf
+    """
     if urlconf is None:
         urlconf = get_urlconf()
+
     root_resolver = get_resolver(urlconf)
     rule_list = create_rule_list(root_resolver, '')
+
     return u'\n'.join(rule_list)
 
 
 def create_rule_list(parent_resolver, abs_pattern):
-
+    """
+    Creates usable rule list
+    """
     rule_list = []
 
     for resolver in parent_resolver.url_patterns:
@@ -52,12 +62,6 @@ def create_rule_list(parent_resolver, abs_pattern):
             length = 120
             rule = rule.ljust(length)
 
-            rule += ' # ' + unquote(path).decode('utf8')
-            length += 40
-            rule = rule.ljust(length)
-
-            rule += '  name=' + (getattr(resolver, 'name', '') or '')
-
             rule_list.append(rule)
 
         if isinstance(resolver, RegexURLResolver):
@@ -67,6 +71,9 @@ def create_rule_list(parent_resolver, abs_pattern):
 
 
 def join_patterns(pattern1, pattern2):
+    """
+    Joins URL patterns
+    """
     if pattern1.endswith('$'):
         return pattern1
 
@@ -79,10 +86,13 @@ def join_patterns(pattern1, pattern2):
     return pattern1
 
 
-# pattern => token
-# '2'     => ('literal', 50)
-# '2|3'   => ('in', [('literal', 50), ('literal', 51)])
 def clean_pattern(pattern):
+    """
+    Cleans URL patterns
+     * pattern => token
+     * '2'     => ('literal', 50)
+     * '2|3'   => ('in', [('literal', 50), ('literal', 51)])
+    """
     star = '*'
     parsed = sre_parse.parse(pattern)
     literals = []
