@@ -2,7 +2,7 @@
 import sre_parse
 from sre_constants import LITERAL, AT, AT_BEGINNING, AT_END
 
-from urllib import quote, unquote
+from urllib.parse import quote, unquote
 
 from django.conf.urls import url
 from django.core.urlresolvers import get_urlconf, get_resolver, RegexURLResolver
