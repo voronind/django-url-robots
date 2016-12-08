@@ -17,9 +17,8 @@ def robots_decorator(url_function):
     """
     Decorator for django.conf.urls.url
     """
-    def url_extended(regex, view, kwargs=None, name=None, prefix='',
-                     robots_allow=None):
-        resolver_or_pattern = url_function(regex, view, kwargs=kwargs, name=name, prefix=prefix)
+    def url_extended(regex, view, kwargs=None, name=None, robots_allow=None):
+        resolver_or_pattern = url_function(regex, view, kwargs=kwargs, name=name)
 
         resolver_or_pattern.robots_allow = robots_allow
         return resolver_or_pattern
