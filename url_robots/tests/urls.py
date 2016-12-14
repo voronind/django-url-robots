@@ -6,5 +6,5 @@ from url_robots.utils import url
 
 
 urlpatterns = [
-    url(r'^profile', include('robots.tests.urls_profile')),
+    url(r'^profile', include('url_robots.tests.urls_profile')),
 ]

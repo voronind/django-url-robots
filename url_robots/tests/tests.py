@@ -141,6 +141,6 @@ Disallow: /profile/*/private*
 Allow: /profile/*/public*'''
 
     def test_create_rules_for_profiles(self):
-        rules = create_rules('robots.tests.urls')
+        rules = create_rules('url_robots.tests.urls')
         self.assertEqual(rules, self.expected_rules)
 
