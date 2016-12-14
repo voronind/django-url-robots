@@ -8,7 +8,7 @@ DEFAULT_SETTINGS = dict(
         'django.contrib.auth',
         'django.contrib.contenttypes',
         'django.contrib.sites',
-        'robots',
+        'url_robots',
     ],
     DATABASES={
         'default': {
@@ -40,7 +40,7 @@ def runtests():
         django.setup()
 
     from django.test.runner import DiscoverRunner
-    test_args = ['robots.tests']
+    test_args = ['url_robots.tests']
     failures = DiscoverRunner(
             verbosity=1, interactive=True, failfast=False
     ).run_tests(test_args)
