@@ -101,9 +101,8 @@ def clean_pattern(pattern):
 
     for token in parsed:
         if token[0] == LITERAL:
-            character = unichr(token[1]).encode('utf8')
+            character = quote(unichr(token[1]).encode('utf8'))
             literals.append(character)
-
         elif token[0] == AT:
             pass
 
