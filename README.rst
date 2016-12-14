@@ -25,10 +25,10 @@ The recommended way to install django-url-robots is with `pip <http://pypi.pytho
 3. Add url_robots view to your root URLconf::
 
     urlpatterns += [
-        url(r'^robots\.txt$', robots.views.robots_txt),
+        url(r'^robots\.txt$', url_robots.views.robots_txt),
         ]
 
-4. Describe rules by boolean keyword argument ``robots_allow`` using for it ``robots.utils.url`` instead ``django.conf.urls.url``::
+4. Describe rules by boolean keyword argument ``robots_allow`` using for it ``url_robots.utils.url`` instead ``django.conf.urls.url``::
 
     from url_robots.utils import url
     
@@ -60,7 +60,7 @@ urls.py::
     from django.conf.urls import include
 
     urlpatterns = [
-        url(r'^profile', include('robots.tests.urls_profile')),
+        url(r'^profile', include('url_robots.tests.urls_profile')),
     ]
 
 urls_profile.py::
