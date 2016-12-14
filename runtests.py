@@ -40,7 +40,7 @@ def runtests():
         django.setup()
 
     from django.test.runner import DiscoverRunner
-    test_args = ['tests']
+    test_args = ['robots.tests']
     failures = DiscoverRunner(
             verbosity=1, interactive=True, failfast=False
     ).run_tests(test_args)
