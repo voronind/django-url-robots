@@ -97,7 +97,7 @@ class CleanPatternTestCase(unittest.TestCase):
         self.clean_equal(r'star-\*', 'star-%2A')
         self.clean_equal(r'dollar-\$', 'dollar-%24')
         # some russian language
-        self.clean_equal(r'path/в никуда/', r'path/%D0%B2%20%D0%BD%D0%B8%D0%BA%D1%83%D0%B4%D0%B0/')
+        self.clean_equal(u'path/в никуда/', r'path/%D0%B2%20%D0%BD%D0%B8%D0%BA%D1%83%D0%B4%D0%B0/')
 
 
 class JoinPatternTestCase(unittest.TestCase):
