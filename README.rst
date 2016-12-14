@@ -36,7 +36,7 @@ The recommended way to install django-url-robots is with `pip <http://pypi.pytho
        url('^profile/private$', views.some_view, robots_allow=False),
        ]
  
-``django-url-robots`` tested with ``Django-1.3``. Encodes unicode characters by percent-encoding.
+``django-url-robots`` tested with ``Django-1.8+``. Encodes unicode characters by percent-encoding.
 
 Settings
 ====================
