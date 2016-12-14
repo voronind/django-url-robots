@@ -1,7 +1,6 @@
 # coding=utf-8
 
-# todo On Django 1.4 change testcase to django.test.SimpleTestCase
-from django.utils import unittest
+import unittest
 
 from robots.utils import clean_pattern, join_patterns, create_rules
 

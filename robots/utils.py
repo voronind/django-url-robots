@@ -5,6 +5,7 @@ from sre_constants import LITERAL, AT, AT_BEGINNING, AT_END
 try:
     # Python 3
     from urllib.parse import quote, unquote
+    unichr = chr
 except ImportError:
     # Python 2
     from urllib import quote, unquote
