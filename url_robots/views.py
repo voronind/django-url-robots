@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from robots.utils import create_rules
+from url_robots.utils import create_rules
 
 
 def robots_txt(request, template='robots.txt'):

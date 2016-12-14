@@ -2,7 +2,7 @@
 
 import unittest
 
-from robots.utils import clean_pattern, join_patterns, create_rules
+from url_robots.utils import clean_pattern, join_patterns, create_rules
 
 
 class CleanPatternTestCase(unittest.TestCase):

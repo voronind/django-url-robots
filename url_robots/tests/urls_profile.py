@@ -1,7 +1,7 @@
 #coding=utf-8
 
 
-from robots.utils import url
+from url_robots.utils import url
 
 urlpatterns = [
     url(r'^s$', lambda x: (), name='profiles', robots_allow=True),

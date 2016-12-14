@@ -2,7 +2,7 @@
 
 from django.conf.urls import include
 
-from robots.utils import url
+from url_robots.utils import url
 
 
 urlpatterns = [
