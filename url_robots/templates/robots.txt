@@ -1,0 +1,3 @@
+User-agent: *
+{{ rules|safe }}
+Crawl-delay: 1

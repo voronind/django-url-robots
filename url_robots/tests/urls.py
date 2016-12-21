@@ -1,10 +1,10 @@
 #coding=utf-8
 
-from django.conf.urls.defaults import patterns, include
+from django.conf.urls import include
 
 from url_robots.utils import url
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^profile', include('url_robots.tests.urls_profile')),
-)
+]
